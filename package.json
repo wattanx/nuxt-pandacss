@@ -15,7 +15,8 @@
   "main": "./dist/module.cjs",
   "types": "./dist/types.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "*.css"
   ],
   "scripts": {
     "prepack": "nuxt-module-build",
@@ -25,18 +26,21 @@
     "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
     "lint": "eslint .",
     "test": "vitest run",
-    "test:watch": "vitest watch"
+    "test:watch": "vitest watch",
+    "test:update": "vitest run -u"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.6.2"
+    "@nuxt/kit": "^3.6.2",
+    "@pandacss/dev": "^0.5.1",
+    "@pandacss/node": "^0.5.1"
   },
   "devDependencies": {
-    "@types/node": "^18",
     "@nuxt/devtools": "latest",
     "@nuxt/eslint-config": "^0.1.1",
     "@nuxt/module-builder": "^0.4.0",
     "@nuxt/schema": "^3.6.2",
     "@nuxt/test-utils": "^3.6.2",
+    "@types/node": "^18",
     "changelogen": "^0.5.3",
     "eslint": "^8.42.0",
     "nuxt": "^3.6.2",
