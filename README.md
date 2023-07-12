@@ -7,9 +7,8 @@
 
 Panda CSS module for Nuxt.
 
-- [✨ &nbsp;Release Notes](/CHANGELOG.md)
-  <!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/my-module?file=playground%2Fapp.vue) -->
-  <!-- - [📖 &nbsp;Documentation](https://example.com) -->
+> **Warning**
+> This library is in active development. Use at your own risk.
 
 ## Features
 
