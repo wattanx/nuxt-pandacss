@@ -45,5 +45,8 @@
     "eslint": "^8.42.0",
     "nuxt": "^3.6.2",
     "vitest": "^0.31.4"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
