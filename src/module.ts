@@ -5,10 +5,7 @@ import {
   addTemplate,
 } from "@nuxt/kit";
 import { Nuxt } from "@nuxt/schema";
-import {
-  emitArtifacts,
-  loadConfigAndCreateContext,
-} from "@pandacss/node";
+import { emitArtifacts, loadConfigAndCreateContext } from "@pandacss/node";
 import { findConfigFile } from "@pandacss/config";
 import { promises as fsp } from "node:fs";
 
@@ -44,11 +41,11 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.alias["styled-system"] = resolve(cwd, "styled-system");
     nuxt.options.alias["styled-system/*"] = resolve(cwd, "styled-system/*");
 
-    const configFile = findConfigFile({ cwd });
-
-    let configPath = configFile;
-
-    if (!configFile) {
+    let configPath = "";
+    try {
+      const configFile = findConfigFile({ cwd });
+      configPath = configFile as string;
+    } catch (e) {
       const dst = addPandaConfigTemplate(cwd, nuxt);
       configPath = dst;
     }
@@ -66,7 +63,7 @@ export default defineNuxtModule<ModuleOptions>({
       return loadConfigAndCreateContext({
         cwd,
         config: { clean: options.codegen?.clean },
-        configPath: configPath as string,
+        configPath,
       });
     }
 
