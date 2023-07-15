@@ -7,7 +7,7 @@ import {
 import { Nuxt } from "@nuxt/schema";
 import { emitArtifacts, loadConfigAndCreateContext } from "@pandacss/node";
 import { findConfigFile } from "@pandacss/config";
-import { promises as fsp } from "node:fs";
+import { promises as fsp, existsSync } from "node:fs";
 
 const logger = useLogger("nuxt:pandacss");
 
@@ -41,10 +41,15 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.alias["styled-system"] = resolve(cwd, "styled-system");
     nuxt.options.alias["styled-system/*"] = resolve(cwd, "styled-system/*");
 
+    if (existsSync(resolve(nuxt.options.buildDir, "panda.config.mjs"))) {
+      await fsp.rm(resolve(nuxt.options.buildDir, "panda.config.mjs"));
+    }
+
     let configPath = "";
     try {
       const configFile = findConfigFile({ cwd });
-      configPath = configFile as string;
+
+      configPath = configFile ?? addPandaConfigTemplate(cwd, nuxt);
     } catch (e) {
       const dst = addPandaConfigTemplate(cwd, nuxt);
       configPath = dst;
@@ -88,7 +93,7 @@ export default defineNuxtModule<ModuleOptions>({
 
 function addPandaConfigTemplate(cwd: string, nuxt: Nuxt) {
   return addTemplate({
-    filename: "panda.config.js",
+    filename: "panda.config.mjs",
     getContents: () => `
   import { defineConfig } from "@pandacss/dev"
  
