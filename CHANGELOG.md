@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.1.0
+
+[compare changes](https://github.com/wattanx/nuxt-pandacss/compare/v0.0.2...v0.1.0)
+
+
+### 🚀 Enhancements
+
+  - Support theme config ([5675bd7](https://github.com/wattanx/nuxt-pandacss/commit/5675bd7))
+
+### 🩹 Fixes
+
+  - Initialized config in buildDir. ([01c2e65](https://github.com/wattanx/nuxt-pandacss/commit/01c2e65))
+
+### ❤️  Contributors
+
+- Wattanx <wattan.dev@gmail.com>
+
 ## v0.0.2
 
 

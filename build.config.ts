@@ -15,5 +15,6 @@ export default defineBuildConfig({
     "@pandacss/logger",
     "@pandacss/preset-base",
     "@pandacss/preset-panda",
+    "@pandacss/types",
   ],
 });
