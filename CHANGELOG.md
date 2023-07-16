@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v0.1.1
+
+[compare changes](https://github.com/wattanx/nuxt-pandacss/compare/0.1.0...v0.1.1)
+
+
+### 🩹 Fixes
+
+  - Execution order is different between prepare and build. ([bdc08dd](https://github.com/wattanx/nuxt-pandacss/commit/bdc08dd))
+
+### ❤️  Contributors
+
+- Wattanx <wattan.dev@gmail.com>
+
 ## v0.1.0
 
 [compare changes](https://github.com/wattanx/nuxt-pandacss/compare/v0.0.2...v0.1.0)
