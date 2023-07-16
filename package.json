@@ -1,8 +1,9 @@
 {
   "name": "@wattanx/nuxt-pandacss",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Panda CSS module for Nuxt.",
   "repository": "https://github.com/wattanx/nuxt-pandacss",
+  "author": "wattanx",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -23,7 +24,7 @@
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
-    "release": "npm run lint && npm run test && npm run prepack && changelogen --release --major --no-commit",
+    "release": "npm run lint && npm run test && npm run prepack && changelogen --release --major --no-commit --no-tag",
     "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest watch",
