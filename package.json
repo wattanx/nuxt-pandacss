@@ -3,6 +3,7 @@
   "version": "0.1.1",
   "description": "Panda CSS module for Nuxt.",
   "repository": "https://github.com/wattanx/nuxt-pandacss",
+  "author": "wattanx",
   "license": "MIT",
   "type": "module",
   "exports": {

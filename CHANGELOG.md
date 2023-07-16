@@ -12,7 +12,7 @@
 
 ### ❤️  Contributors
 
-- Wattanx <wattan.dev@gmail.com>
+- Wattanx <@wattanx>
 
 ## v0.1.0
 
@@ -29,7 +29,7 @@
 
 ### ❤️  Contributors
 
-- Wattanx <wattan.dev@gmail.com>
+- Wattanx <@wattanx>
 
 ## v0.0.2
 
@@ -45,7 +45,7 @@
 
 ### ❤️  Contributors
 
-- Wattanx <wattan.dev@gmail.com>
+- Wattanx <@wattanx>
 
 ## v0.0.1
 
@@ -60,7 +60,7 @@
 
 ### ❤️  Contributors
 
-- Wattanx <wattan.dev@gmail.com>
+- Wattanx <@wattanx>
 
 ## v0.0.1
 
@@ -71,5 +71,5 @@
 
 ### ❤️  Contributors
 
-- Wattanx <wattan.dev@gmail.com>
+- Wattanx <@wattanx>
 
