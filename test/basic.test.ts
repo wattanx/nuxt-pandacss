@@ -19,36 +19,31 @@ describe("basic test", async () => {
       import { defineConfig } from \\"@pandacss/dev\\"
        
       export default defineConfig({
-        theme: {
-        \\"tokens\\": {
-          \\"colors\\": {
-            \\"primary\\": {
-              \\"value\\": \\"#0FEE0F\\"
+        \\"preflight\\": true,
+        \\"include\\": [
+          \\"/Users/wattanx/repo/nuxt-pandacss/test/fixtures/basic/components/**/*.{js,jsx,ts,tsx,vue}\\",
+          \\"/Users/wattanx/repo/nuxt-pandacss/test/fixtures/basic/pages/**/*.{js,jsx,ts,tsx,vue}\\"
+        ],
+        \\"exclude\\": [],
+        \\"outdir\\": \\"styled-system\\",
+        \\"cwd\\": \\"/Users/wattanx/repo/nuxt-pandacss/test/fixtures/basic/.nuxt\\",
+        \\"theme\\": {
+          \\"tokens\\": {
+            \\"colors\\": {
+              \\"primary\\": {
+                \\"value\\": \\"#0FEE0F\\"
+              },
+              \\"secondary\\": {
+                \\"value\\": \\"#EE0F0F\\"
+              }
             },
-            \\"secondary\\": {
-              \\"value\\": \\"#EE0F0F\\"
-            }
-          },
-          \\"fonts\\": {
-            \\"body\\": {
-              \\"value\\": \\"system-ui, sans-serif\\"
+            \\"fonts\\": {
+              \\"body\\": {
+                \\"value\\": \\"system-ui, sans-serif\\"
+              }
             }
           }
         }
-      },
-        // Whether to use css reset
-        preflight: true,
-       
-        // Where to look for your css declarations
-        include: [\\"/Users/wattanx/repo/nuxt-pandacss/test/fixtures/basic/components/**/*.{js,jsx,ts,tsx,vue}\\",
-        \\"/Users/wattanx/repo/nuxt-pandacss/test/fixtures/basic/pages/**/*.{js,jsx,ts,tsx,vue}\\"],
-       
-        // Files to exclude
-        exclude: [],
-       
-        // The output directory for your css system
-        outdir: \\"styled-system\\",
-        cwd: \\"/Users/wattanx/repo/nuxt-pandacss/test/fixtures/basic/.nuxt\\",
       })"
     `);
   });

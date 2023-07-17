@@ -12,14 +12,8 @@ import { Config } from "@pandacss/types";
 
 const logger = useLogger("nuxt:pandacss");
 
-export interface ModuleOptions {
-  cwd?: string;
+export interface ModuleOptions extends Config {
   configPath?: string;
-  codegen?: {
-    silent?: boolean;
-    clean?: boolean;
-  };
-  theme?: Config["theme"];
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -28,13 +22,16 @@ export default defineNuxtModule<ModuleOptions>({
     configKey: "pandacss",
   },
   // Default configuration options of the Nuxt module
-  defaults: {
-    codegen: {
-      silent: false,
-      clean: false,
-    },
-    theme: undefined,
-  },
+  defaults: (nuxt) => ({
+    preflight: true,
+    include: [
+      `${nuxt.options.srcDir}/components/**/*.{js,jsx,ts,tsx,vue}`,
+      `${nuxt.options.srcDir}/pages/**/*.{js,jsx,ts,tsx,vue}`,
+    ],
+    exclude: [],
+    outdir: "styled-system",
+    cwd: nuxt.options.buildDir,
+  }),
   async setup(options, nuxt) {
     const { resolve } = createResolver(import.meta.url);
 
@@ -52,9 +49,9 @@ export default defineNuxtModule<ModuleOptions>({
     try {
       const configFile = findConfigFile({ cwd });
 
-      configPath = configFile ?? addPandaConfigTemplate(cwd, nuxt, options);
+      configPath = configFile ?? addPandaConfigTemplate(cwd, options);
     } catch (e) {
-      const dst = addPandaConfigTemplate(cwd, nuxt, options);
+      const dst = addPandaConfigTemplate(cwd, options);
       configPath = dst;
     }
 
@@ -70,7 +67,7 @@ export default defineNuxtModule<ModuleOptions>({
     function loadContext() {
       return loadConfigAndCreateContext({
         cwd,
-        config: { clean: options.codegen?.clean },
+        config: { clean: options?.clean },
         configPath,
       });
     }
@@ -106,32 +103,13 @@ export default defineNuxtModule<ModuleOptions>({
   },
 });
 
-function addPandaConfigTemplate(
-  cwd: string,
-  nuxt: Nuxt,
-  options: ModuleOptions
-) {
+function addPandaConfigTemplate(cwd: string, options: ModuleOptions) {
   return addTemplate({
     filename: "panda.config.mjs",
     getContents: () => `
 import { defineConfig } from "@pandacss/dev"
  
-export default defineConfig({
-  theme: ${JSON.stringify(options.theme, null, 2)},
-  // Whether to use css reset
-  preflight: true,
- 
-  // Where to look for your css declarations
-  include: ["${nuxt.options.srcDir}/components/**/*.{js,jsx,ts,tsx,vue}",
-  "${nuxt.options.srcDir}/pages/**/*.{js,jsx,ts,tsx,vue}"],
- 
-  // Files to exclude
-  exclude: [],
- 
-  // The output directory for your css system
-  outdir: "styled-system",
-  cwd: "${cwd}",
-})`,
+export default defineConfig(${JSON.stringify({ ...options, cwd }, null, 2)})`,
     write: true,
   }).dst;
 }

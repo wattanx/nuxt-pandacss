@@ -25,6 +25,7 @@ export default defineNuxtConfig({
         },
       },
     },
+    jsxFramework: "vue",
   },
   devtools: { enabled: true },
 });
