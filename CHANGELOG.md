@@ -1,6 +1,28 @@
 # Changelog
 
 
+## v0.2.0
+
+[compare changes](https://github.com/wattanx/nuxt-pandacss/compare/0.1.1...v0.2.0)
+
+
+### 🚀 Enhancements
+
+  - Support other panda config ([e23b3b9](https://github.com/wattanx/nuxt-pandacss/commit/e23b3b9))
+  - Add docs dir ([7eda780](https://github.com/wattanx/nuxt-pandacss/commit/7eda780))
+
+### 📖 Documentation
+
+  - Update docs ([d481039](https://github.com/wattanx/nuxt-pandacss/commit/d481039))
+
+### 🏡 Chore
+
+  - Add author ([9b4c2da](https://github.com/wattanx/nuxt-pandacss/commit/9b4c2da))
+
+### ❤️  Contributors
+
+- Wattanx <@wattanx>
+
 ## v0.1.1
 
 [compare changes](https://github.com/wattanx/nuxt-pandacss/compare/0.1.0...v0.1.1)
