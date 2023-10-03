@@ -17,7 +17,8 @@ export interface ModuleOptions extends Config {
   configPath?: string;
   /**
    * The path of the Panda CSS file.
-   * @default '@/assets/css/global.css'
+   * @default '<buildDir>/panda.css'
+   * @example '@/assets/css/global.css'
    */
   cssPath?: string;
 }
@@ -37,7 +38,7 @@ export default defineNuxtModule<ModuleOptions>({
     exclude: [],
     outdir: "styled-system",
     cwd: nuxt.options.buildDir,
-    cssPath: `@/${nuxt.options.dir.assets}/css/global.css`,
+    cssPath: `${nuxt.options.buildDir}/panda.css`,
   }),
   async setup(options, nuxt) {
     const { resolve } = createResolver(import.meta.url);
@@ -120,7 +121,7 @@ function addPandaConfigTemplate(cwd: string, options: ModuleOptions) {
     filename: "panda.config.mjs",
     getContents: () => `
 import { defineConfig } from "@pandacss/dev"
- 
+
 export default defineConfig(${JSON.stringify({ ...options, cwd }, null, 2)})`,
     write: true,
   }).dst;

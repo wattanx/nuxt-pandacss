@@ -1,4 +1,4 @@
-import { createResolver, useNuxt, resolvePath } from "nuxt/kit";
+import { createResolver, useNuxt, resolvePath, addTemplate } from "nuxt/kit";
 import type { ModuleOptions } from "./module";
 import { existsSync } from "node:fs";
 import { relative } from "node:path";
@@ -21,16 +21,15 @@ export async function resolveCSSPath(
   resolvedCSSPath: NonNullable<ModuleOptions["cssPath"]>;
   loggerMessage: string;
 }> {
-  const { resolve } = createResolver(import.meta.url);
-  const defaultCSSPath = `${nuxt.options.dir.assets}/css/global.css`;
-
+  // if cssPath is string, find args.cssPath
+  // else find cssPath from '@/assets/css/global.css'
   const resolvedCSSPath =
     typeof cssPath === "string"
       ? await resolvePath(cssPath, { extensions: [".css"] })
-      : resolve(defaultCSSPath);
+      : await resolvePath(`${nuxt.options.dir.assets}/css/global.css`, {
+          extensions: [".css"],
+        });
 
-  // TODO: if @/assets/css/global does not exist, throw error
-  // TODO: used panda css logger
   return existsSync(resolvedCSSPath)
     ? {
         resolvedCSSPath,
@@ -40,7 +39,14 @@ export async function resolveCSSPath(
         )}`,
       }
     : {
-        resolvedCSSPath,
-        loggerMessage: `🐼 [info] Using default Panda CSS file from @/${defaultCSSPath}`,
+        resolvedCSSPath: createResolver(import.meta.url).resolve(
+          addTemplate({
+            filename: "panda.css",
+            write: true,
+            getContents: () =>
+              "@layer reset, base, tokens, recipes, utilities;",
+          }).dst
+        ),
+        loggerMessage: "🐼 [info] Using default Panda CSS file.",
       };
 }
