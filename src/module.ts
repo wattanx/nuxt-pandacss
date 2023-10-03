@@ -9,11 +9,17 @@ import { emitArtifacts, loadConfigAndCreateContext } from "@pandacss/node";
 import { findConfigFile } from "@pandacss/config";
 import { promises as fsp, existsSync } from "node:fs";
 import { Config } from "@pandacss/types";
+import { resolveCSSPath } from "./resolvers";
 
 const logger = useLogger("nuxt:pandacss");
 
 export interface ModuleOptions extends Config {
   configPath?: string;
+  /**
+   * The path of the Panda CSS file.
+   * @default '@/assets/css/global.css'
+   */
+  cssPath?: string;
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -31,6 +37,7 @@ export default defineNuxtModule<ModuleOptions>({
     exclude: [],
     outdir: "styled-system",
     cwd: nuxt.options.buildDir,
+    cssPath: `@/${nuxt.options.dir.assets}/css/global.css`,
   }),
   async setup(options, nuxt) {
     const { resolve } = createResolver(import.meta.url);
@@ -62,7 +69,12 @@ export default defineNuxtModule<ModuleOptions>({
       configPath,
     };
 
-    nuxt.options.css.push(resolve(process.cwd(), "src/css/global.css"));
+    const { resolvedCSSPath, loggerMessage } = await resolveCSSPath(
+      options.cssPath,
+      nuxt
+    );
+    nuxt.options.css.push(resolvedCSSPath);
+    logger.info(loggerMessage);
 
     function loadContext() {
       return loadConfigAndCreateContext({

@@ -26,6 +26,7 @@ export default defineNuxtConfig({
       },
     },
     jsxFramework: "vue",
+    cssPath: "@/css/global.css",
   },
   devtools: { enabled: true },
 });
