@@ -1,3 +1,4 @@
+import { parseConfig } from "./utils/config-parser";
 import { describe, it, expect } from "vitest";
 import { fileURLToPath } from "node:url";
 import { setup, useTestContext } from "@nuxt/test-utils";
@@ -11,40 +12,31 @@ describe("basic test", async () => {
     },
   });
 
-  it("generate default panda.config", () => {
+  it("generate default panda.config", async () => {
     const nuxt = useTestContext().nuxt!;
 
-    expect(nuxt.vfs["#build/panda.config"]).toMatchInlineSnapshot(`
-      "
-      import { defineConfig } from \\"@pandacss/dev\\"
-       
-      export default defineConfig({
-        \\"preflight\\": true,
-        \\"include\\": [
-          \\"/Users/wattanx/repo/nuxt-pandacss/test/fixtures/basic/components/**/*.{js,jsx,ts,tsx,vue}\\",
-          \\"/Users/wattanx/repo/nuxt-pandacss/test/fixtures/basic/pages/**/*.{js,jsx,ts,tsx,vue}\\"
-        ],
-        \\"exclude\\": [],
-        \\"outdir\\": \\"styled-system\\",
-        \\"cwd\\": \\"/Users/wattanx/repo/nuxt-pandacss/test/fixtures/basic/.nuxt\\",
-        \\"theme\\": {
-          \\"tokens\\": {
-            \\"colors\\": {
-              \\"primary\\": {
-                \\"value\\": \\"#0FEE0F\\"
-              },
-              \\"secondary\\": {
-                \\"value\\": \\"#EE0F0F\\"
-              }
-            },
-            \\"fonts\\": {
-              \\"body\\": {
-                \\"value\\": \\"system-ui, sans-serif\\"
-              }
-            }
-          }
-        }
-      })"
-    `);
+    const pandaConfig = nuxt.vfs["#build/panda.config"];
+
+    const config = await parseConfig(pandaConfig);
+
+    expect(config.preflight).toBe(true);
+    expect(config.include).toEqual([
+      `${nuxt.options.srcDir}/components/**/*.{js,jsx,ts,tsx,vue}`,
+      `${nuxt.options.srcDir}/pages/**/*.{js,jsx,ts,tsx,vue}`,
+    ]);
+    expect(config.exclude).toEqual([]);
+    expect(config.outdir).toBe("styled-system");
+    expect(config.cwd).toBe(nuxt.options.buildDir);
+    expect(config.theme).toEqual({
+      tokens: {
+        colors: {
+          primary: { value: "#0FEE0F" },
+          secondary: { value: "#EE0F0F" },
+        },
+        fonts: {
+          body: { value: "system-ui, sans-serif" },
+        },
+      },
+    });
   });
 });
