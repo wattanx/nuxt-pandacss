@@ -1,0 +1,17 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["@nuxtjs"],
+  "packageRules": [
+    {
+      "groupName": "nuxt core",
+      "groupSlug": "nuxt",
+      "matchPackageNames": ["nuxi"],
+      "matchPackagePatterns": ["^@nuxt/"]
+    },
+    {
+      "groupName": "pandacss",
+      "groupSlug": "pandacss",
+      "matchPackagePatterns": ["^@pandacss/"]
+    }
+  ]
+}
