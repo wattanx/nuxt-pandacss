@@ -28,5 +28,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Stub
+        run: pnpm dev:prepare
+
       - name: Test
         run: pnpm test
