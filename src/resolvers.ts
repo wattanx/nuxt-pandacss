@@ -5,7 +5,7 @@ import { relative } from "node:path";
 
 /**
  *
- * @param cssPath
+ * @param cssPath - ModuleOptions.cssPath
  * @param nuxt
  * @returns resolvedCSSPath
  * @returns loggerMessage

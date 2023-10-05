@@ -17,6 +17,7 @@ export interface ModuleOptions extends Config {
   configPath?: string;
   /**
    * The path of the Panda CSS file.
+   * If the file does not exist, it will be created automatically.
    * @default '<buildDir>/panda.css'
    * @example '@/assets/css/global.css'
    */
@@ -70,6 +71,7 @@ export default defineNuxtModule<ModuleOptions>({
       configPath,
     };
 
+    // Add CSS file
     const { resolvedCSSPath, loggerMessage } = await resolveCSSPath(
       options.cssPath,
       nuxt
