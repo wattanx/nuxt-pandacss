@@ -27,6 +27,7 @@ describe("basic test", async () => {
     expect(config.exclude).toEqual([]);
     expect(config.outdir).toBe("styled-system");
     expect(config.cwd).toBe(nuxt.options.buildDir);
+    expect(config.cssPath).toBe(`${nuxt.options.buildDir}/panda.css`);
     expect(config.theme).toEqual({
       tokens: {
         colors: {
