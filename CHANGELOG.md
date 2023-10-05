@@ -1,6 +1,28 @@
 # Changelog
 
 
+## v0.3.0
+
+[compare changes](https://github.com/wattanx/nuxt-pandacss/compare/0.2.0...v0.3.0)
+
+
+### 🚀 Enhancements
+
+  - Add ci ([f861e40](https://github.com/wattanx/nuxt-pandacss/commit/f861e40))
+  - Add 'cssPath' options for Nuxt module & add resolver ([9f4f5ea](https://github.com/wattanx/nuxt-pandacss/commit/9f4f5ea))
+  - Add panda.css template ([73cb2e7](https://github.com/wattanx/nuxt-pandacss/commit/73cb2e7))
+
+### 🩹 Fixes
+
+  - Add stub ([68faf21](https://github.com/wattanx/nuxt-pandacss/commit/68faf21))
+  - Remove snapshot and verify the value of config. ([c5931af](https://github.com/wattanx/nuxt-pandacss/commit/c5931af))
+  - Add test & fix JSDoc ([02f266a](https://github.com/wattanx/nuxt-pandacss/commit/02f266a))
+
+### ❤️  Contributors
+
+- Gangan <gangan.education@gmail.com>
+- Wattanx <wattan.dev@gmail.com>
+
 ## v0.2.0
 
 [compare changes](https://github.com/wattanx/nuxt-pandacss/compare/0.1.1...v0.2.0)
