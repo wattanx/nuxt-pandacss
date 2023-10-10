@@ -14,6 +14,12 @@ import { resolveCSSPath } from "./resolvers";
 const logger = useLogger("nuxt:pandacss");
 
 export interface ModuleOptions extends Config {
+  /**
+   * The path of the Panda config file.
+   * If the file does not exist, it will be created automatically.
+   * @default '<buildDir>/panda.config.mjs'
+   * @example 'panda.config.ts'
+   */
   configPath?: string;
   /**
    * The path of the Panda CSS file.
@@ -56,7 +62,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     let configPath = "";
     try {
-      const configFile = findConfigFile({ cwd });
+      const configFile = findConfigFile({ cwd, file: options.configPath });
 
       configPath = configFile ?? addPandaConfigTemplate(cwd, options);
     } catch (e) {
