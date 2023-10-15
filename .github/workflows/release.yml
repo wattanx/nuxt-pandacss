@@ -26,6 +26,9 @@ jobs:
 
       - run: pnpm i
 
+      - name: Prepare
+        run: pnpm run dev:prepare
+
       - name: PNPM build
         run: pnpm run prepack
 
