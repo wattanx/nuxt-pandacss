@@ -1,6 +1,30 @@
 # Changelog
 
 
+## v0.4.1
+
+[compare changes](https://github.com/wattanx/nuxt-pandacss/compare/v0.4.0...v0.5.0)
+
+
+### 🩹 Fixes
+
+  - Add packageManager ([77fb178](https://github.com/wattanx/nuxt-pandacss/commit/77fb178))
+  - Add prepare ([0de1211](https://github.com/wattanx/nuxt-pandacss/commit/0de1211))
+
+### ❤️  Contributors
+
+- Wattanx <@wattanx>
+
+## v0.4.0
+
+### 🩹 Fixes
+
+  - fix: settings are not reflected when settings configPath options. (#19)
+
+### ❤️  Contributors
+
+- Gangan <@shinGangan>
+
 ## v0.3.0
 
 [compare changes](https://github.com/wattanx/nuxt-pandacss/compare/0.2.0...v0.3.0)
@@ -20,8 +44,8 @@
 
 ### ❤️  Contributors
 
-- Gangan <gangan.education@gmail.com>
-- Wattanx <wattan.dev@gmail.com>
+- Gangan <@shinGangan>
+- Wattanx <@wattanx>
 
 ## v0.2.0
 
