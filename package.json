@@ -45,7 +45,7 @@
     "@types/node": "^20.10.4",
     "changelogen": "^0.5.3",
     "eslint": "^8.42.0",
-    "nuxt": "3.6.3",
+    "nuxt": "3.8.2",
     "vitest": "^1.0.3"
   },
   "publishConfig": {
