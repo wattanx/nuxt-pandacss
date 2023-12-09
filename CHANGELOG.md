@@ -1,6 +1,10 @@
 # Changelog
 
 
+## v0.4.2
+
+[compare changes](https://github.com/wattanx/nuxt-pandacss/compare/v0.4.1...v0.4.2)
+
 ## v0.4.1
 
 [compare changes](https://github.com/wattanx/nuxt-pandacss/compare/v0.4.0...v0.5.0)
