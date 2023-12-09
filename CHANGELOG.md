@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v0.5.0
+
+[compare changes](https://github.com/wattanx/nuxt-pandacss/compare/v0.4.1...v0.5.0)
+
+
+### 🏡 Chore
+
+  - **release:** 0.4.2 ([#28](https://github.com/wattanx/nuxt-pandacss/pull/28))
+
+### ❤️  Contributors
+
+- Ryota Watanabe
+
 ## v0.4.2
 
 [compare changes](https://github.com/wattanx/nuxt-pandacss/compare/v0.4.1...v0.4.2)
