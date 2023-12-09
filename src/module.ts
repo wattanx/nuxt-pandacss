@@ -4,11 +4,10 @@ import {
   useLogger,
   addTemplate,
 } from "@nuxt/kit";
-import { Nuxt } from "@nuxt/schema";
 import { emitArtifacts, loadConfigAndCreateContext } from "@pandacss/node";
 import { findConfigFile } from "@pandacss/config";
 import { promises as fsp, existsSync } from "node:fs";
-import { Config } from "@pandacss/types";
+import type { Config } from "@pandacss/types";
 import { resolveCSSPath } from "./resolvers";
 
 const logger = useLogger("nuxt:pandacss");
