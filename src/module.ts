@@ -4,8 +4,8 @@ import {
   useLogger,
   addTemplate,
 } from "@nuxt/kit";
-import { emitArtifacts, loadConfigAndCreateContext } from "@pandacss/node";
-import { findConfigFile } from "@pandacss/config";
+import { codegen, loadConfigAndCreateContext } from "@pandacss/node";
+import { findConfig } from "@pandacss/config";
 import { promises as fsp, existsSync } from "node:fs";
 import type { Config } from "@pandacss/types";
 import { resolveCSSPath } from "./resolvers";
@@ -61,7 +61,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     let configPath = "";
     try {
-      const configFile = findConfigFile({ cwd, file: options.configPath });
+      const configFile = findConfig({ cwd, file: options.configPath });
 
       configPath = configFile ?? addPandaConfigTemplate(cwd, options);
     } catch (e) {
@@ -95,7 +95,7 @@ export default defineNuxtModule<ModuleOptions>({
     async function createPandaContext() {
       const ctx = await loadContext();
 
-      const { msg } = await emitArtifacts(ctx);
+      const { msg } = await codegen(ctx);
 
       logger.log(msg);
     }
