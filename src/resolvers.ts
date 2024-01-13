@@ -1,7 +1,7 @@
-import { createResolver, useNuxt, resolvePath, addTemplate } from "nuxt/kit";
-import type { ModuleOptions } from "./module";
+import { addTemplate, createResolver, resolvePath, useNuxt } from "@nuxt/kit";
 import { existsSync } from "node:fs";
 import { relative } from "node:path";
+import type { ModuleOptions } from "./types";
 
 /**
  *
