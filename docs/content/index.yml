@@ -1,0 +1,30 @@
+title: "Panda CSS module for Nuxt."
+description: "Welcome to the Nuxt Panda CSS module documentation to help you set up Panda CSS"
+navigation: false
+hero:
+  title: "Add Panda CSS to your [Nuxt Apps]{.text-primary}."
+  description: "Welcome to the Nuxt Panda CSS module documentation to help you set up Panda CSS"
+  orientation: horizontal
+  links:
+    - label: "Get started"
+      icon: "i-heroicons-rocket-launch"
+      to: "/getting-started/setup"
+      size: lg
+    - label: "Star on GitHub"
+      icon: "i-simple-icons-github"
+      color: "white"
+      to: "https://github.com/wattanx/nuxt-pandacss"
+      target: "_blank"
+      size: lg
+  code: |
+    ```ts [nuxt.config.ts]
+    export default defineNuxtConfig({
+      modules: ['@wattanx/nuxt-pandacss']
+    })
+    ```
+features:
+  title: "Shipped with many features."
+  items:
+    - title: "Zero Configuration"
+      description: "This module enables a quick and easy setup of Panda CSS in your Nuxt application."
+      to: "/getting-started/setup"

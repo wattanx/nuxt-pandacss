@@ -1,30 +1,61 @@
+import { version as pkgVersion } from "../package.json";
+
 export default defineAppConfig({
-  docus: {
-    title: "Nuxt Panda CSS",
-    description: "Panda CSS module for Nuxt.",
-    socials: {
-      github: "wattanx/nuxt-pandacss",
+  ui: {
+    primary: "green",
+    gray: "slate",
+    footer: {
+      bottom: {
+        left: "text-sm text-gray-500 dark:text-gray-400",
+        wrapper: "border-t border-gray-200 dark:border-gray-800",
+      },
     },
-    github: {
-      branch: "main",
-      repo: "wattanx/nuxt-pandacss",
-      owner: "wattanx",
-      edit: true,
+  },
+  seo: {
+    siteName: "Nuxt PandaCSS",
+  },
+  header: {
+    logo: {
+      alt: "",
+      light: "",
+      dark: "",
     },
-    aside: {
-      level: 0,
-      collapsed: false,
-      exclude: [],
-    },
-    main: {
-      padded: true,
-      fluid: true,
-    },
-    header: {
-      logo: true,
-      showLinkIcon: true,
-      exclude: [],
-      fluid: true,
+    pkgVersion,
+    search: true,
+    colorMode: true,
+    links: [
+      {
+        icon: "i-simple-icons-github",
+        to: "https://github.com/wattanx/nuxt-pandacss",
+        target: "_blank",
+        "aria-label": "Docs template on GitHub",
+      },
+    ],
+  },
+  footer: {
+    credits: "Copyright © 2023",
+    colorMode: false,
+    links: [
+      {
+        icon: "i-simple-icons-nuxtdotjs",
+        to: "https://nuxt.com",
+        target: "_blank",
+        "aria-label": "Nuxt Website",
+      },
+    ],
+  },
+  toc: {
+    title: "Table of Contents",
+    bottom: {
+      title: "Community",
+      links: [
+        {
+          icon: "i-heroicons-star",
+          label: "Star on GitHub",
+          to: "https://github.com/wattanx/nuxt-pandacss",
+          target: "_blank",
+        },
+      ],
     },
   },
 });
