@@ -23,7 +23,7 @@
     "prepack": "nuxt-module-build",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
-    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground && nuxi prepare docs",
     "dev:docs": "nuxi dev docs",
     "release": "npm run lint && npm run test && npm run prepack && changelogen --release --major --no-commit --no-tag",
     "lint": "eslint .",
@@ -37,7 +37,7 @@
     "@pandacss/node": "^0.26.2"
   },
   "devDependencies": {
-    "@nuxt/devtools": "latest",
+    "@nuxt/devtools": "^1.0.8",
     "@nuxt/eslint-config": "^0.2.0",
     "@nuxt/module-builder": "^0.5.5",
     "@nuxt/schema": "3.9.1",
