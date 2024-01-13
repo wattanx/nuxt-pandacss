@@ -21,7 +21,7 @@ export default defineAppConfig({
       dark: "",
     },
     pkgVersion,
-    search: false,
+    search: true,
     colorMode: true,
     links: [
       {

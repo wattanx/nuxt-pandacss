@@ -15,4 +15,8 @@ export default defineNuxtConfig({
   typescript: {
     strict: false,
   },
+  routeRules: {
+    "/getting-started": { redirect: "/getting-started/setup" },
+    "/api/search.json": { prerender: true },
+  },
 });
