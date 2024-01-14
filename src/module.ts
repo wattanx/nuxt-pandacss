@@ -1,39 +1,20 @@
 import {
-  defineNuxtModule,
-  createResolver,
-  useLogger,
   addTemplate,
+  createResolver,
+  defineNuxtModule,
+  useLogger,
 } from "@nuxt/kit";
-import { codegen, loadConfigAndCreateContext } from "@pandacss/node";
 import { findConfig } from "@pandacss/config";
-import { promises as fsp, existsSync } from "node:fs";
-import type { Config } from "@pandacss/types";
+import { codegen, loadConfigAndCreateContext } from "@pandacss/node";
+import { existsSync, promises as fsp } from "node:fs";
+import { configKey, name, version } from "../package.json";
 import { resolveCSSPath } from "./resolvers";
+import type { ModuleOptions } from "./types";
 
 const logger = useLogger("nuxt:pandacss");
 
-export interface ModuleOptions extends Config {
-  /**
-   * The path of the Panda config file.
-   * If the file does not exist, it will be created automatically.
-   * @default '<buildDir>/panda.config.mjs'
-   * @example 'panda.config.ts'
-   */
-  configPath?: string;
-  /**
-   * The path of the Panda CSS file.
-   * If the file does not exist, it will be created automatically.
-   * @default '<buildDir>/panda.css'
-   * @example '@/assets/css/global.css'
-   */
-  cssPath?: string;
-}
-
 export default defineNuxtModule<ModuleOptions>({
-  meta: {
-    name: "@wattanx/nuxt-pandacss",
-    configKey: "pandacss",
-  },
+  meta: { name, version, configKey },
   // Default configuration options of the Nuxt module
   defaults: (nuxt) => ({
     preflight: true,
