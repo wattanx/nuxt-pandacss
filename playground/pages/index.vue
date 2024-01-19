@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { css } from "styled-system/css";
-import { styled } from "styled-system/jsx";
+import { css } from "pandacss/css";
+import { styled } from "pandacss/jsx";
 </script>
 
 <template>

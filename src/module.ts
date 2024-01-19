@@ -7,6 +7,7 @@ import {
 import { findConfig } from "@pandacss/config";
 import { codegen, loadConfigAndCreateContext } from "@pandacss/node";
 import { existsSync, promises as fsp } from "node:fs";
+import { join } from "pathe";
 import { configKey, name, version } from "../package.json";
 import { resolveCSSPath } from "./resolvers";
 import type { ModuleOptions } from "./types";
@@ -32,9 +33,13 @@ export default defineNuxtModule<ModuleOptions>({
 
     const cwd = resolve(options.cwd ?? nuxt.options.buildDir);
 
-    // add alias
-    nuxt.options.alias["styled-system"] = resolve(cwd, "styled-system");
-    nuxt.options.alias["styled-system/*"] = resolve(cwd, "styled-system/*");
+    // TODO: dot directory support
+    nuxt.options.alias[options.outdir!] = join(cwd, options.outdir!);
+    nuxt.options.alias[`${options.outdir!}/*`] = join(
+      cwd,
+      options.outdir!,
+      "./*"
+    );
 
     if (existsSync(resolve(nuxt.options.buildDir, "panda.config.mjs"))) {
       await fsp.rm(resolve(nuxt.options.buildDir, "panda.config.mjs"));
