@@ -35,7 +35,8 @@
   "dependencies": {
     "@nuxt/kit": "3.9.2",
     "@pandacss/dev": "^0.26.2",
-    "@pandacss/node": "^0.26.2"
+    "@pandacss/node": "^0.26.2",
+    "pathe": "^1.1.2"
   },
   "devDependencies": {
     "@nuxt/devtools": "^1.0.8",
