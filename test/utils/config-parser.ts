@@ -3,9 +3,9 @@ import { walk } from "estree-walker";
 import type { ObjectExpression } from "estree";
 import { transform } from "esbuild";
 import { parse } from "acorn";
-import type { Config } from "@pandacss/types";
+import type { ModuleOptions } from "../../src/types";
 
-export const parseConfig = async (code: string): Promise<Config> => {
+export const parseConfig = async (code: string): Promise<ModuleOptions> => {
   const js = await transform(code, { loader: "ts" });
 
   let config: any;
@@ -28,7 +28,7 @@ export const parseConfig = async (code: string): Promise<Config> => {
 
             if (argument.type === "ObjectExpression") {
               const obj = js.code.slice(argument.start, argument.end);
-              config = JSON.parse(obj) as Config;
+              config = JSON.parse(obj) as ModuleOptions;
             }
           }
         }
