@@ -1,6 +1,6 @@
 {
   "name": "@wattanx/nuxt-pandacss",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Panda CSS module for Nuxt.",
   "configKey": "pandacss",
   "repository": "https://github.com/wattanx/nuxt-pandacss",

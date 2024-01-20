@@ -1,6 +1,34 @@
 # Changelog
 
 
+## v0.7.0
+
+[compare changes](https://github.com/wattanx/nuxt-pandacss/compare/v0.4.1...v0.7.0)
+
+
+### 🚀 Enhancements
+
+  - Set outdir to alias ([#40](https://github.com/wattanx/nuxt-pandacss/pull/40))
+
+### 💅 Refactors
+
+  - Refactor ModuleOptions type & fix related import ([#35](https://github.com/wattanx/nuxt-pandacss/pull/35))
+
+### 📖 Documentation
+
+  - Migrate nuxt ui pro ([#34](https://github.com/wattanx/nuxt-pandacss/pull/34))
+
+### 🏡 Chore
+
+  - **release:** 0.4.2 ([#28](https://github.com/wattanx/nuxt-pandacss/pull/28))
+  - **release:** 0.5.0 ([#29](https://github.com/wattanx/nuxt-pandacss/pull/29))
+  - **release:** 0.6.0 ([#32](https://github.com/wattanx/nuxt-pandacss/pull/32))
+
+### ❤️  Contributors
+
+- Ryota Watanabe 
+- Gangan
+
 ## v0.5.0
 
 [compare changes](https://github.com/wattanx/nuxt-pandacss/compare/v0.4.1...v0.5.0)
