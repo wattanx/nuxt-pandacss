@@ -1,11 +1,14 @@
 export default defineNuxtConfig({
-  modules: ["../src/module"],
+  modules: ["../src/module", "@nuxt/devtools"],
   pandacss: {
     theme: {
       tokens: {
         colors: {
           primary: { value: "#0FEE0F" },
           secondary: { value: "#EE0F0F" },
+          blue: {
+            500: { value: "#3b82f6" },
+          },
         },
         fontSizes: {
           "2xs": { value: "0.5rem" },

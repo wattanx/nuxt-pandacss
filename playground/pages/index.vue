@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { css } from "pandacss/css";
 import { styled } from "pandacss/jsx";
 </script>
 
@@ -8,4 +7,7 @@ import { styled } from "pandacss/jsx";
   <div :class="css({ fontSize: '5xl', fontWeight: 'bold', color: 'primary' })">
     Hello 🐼!
   </div>
+  <PButton :css="{ borderRadius: '16px', px: '8px', cursor: 'pointer' }"
+    >Panda</PButton
+  >
 </template>
