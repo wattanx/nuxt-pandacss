@@ -1,4 +1,5 @@
 import {
+  addImportsSources,
   addTemplate,
   createResolver,
   defineNuxtModule,
@@ -11,6 +12,7 @@ import { join } from "pathe";
 import { configKey, name, version } from "../package.json";
 import { resolveCSSPath } from "./resolvers";
 import type { ModuleOptions } from "./types";
+import { createPresets } from "./imports/presets";
 
 const logger = useLogger("nuxt:pandacss");
 
@@ -40,6 +42,8 @@ export default defineNuxtModule<ModuleOptions>({
       options.outdir!,
       "./*"
     );
+
+    addImportsSources(createPresets({ outdir: options.outdir }));
 
     if (existsSync(resolve(nuxt.options.buildDir, "panda.config.mjs"))) {
       await fsp.rm(resolve(nuxt.options.buildDir, "panda.config.mjs"));
