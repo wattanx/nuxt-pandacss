@@ -11,7 +11,7 @@ export default defineNuxtConfig({
       },
     },
     jsxFramework: "vue",
-    cssPath: "@/css/global.css",
+    cssPath: "@/assets/css/global.css",
     outdir: "pandacss",
   },
   devtools: { enabled: true },
