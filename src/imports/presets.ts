@@ -10,10 +10,31 @@ export const createPresets = ({
       from: `${outdir}/css`,
       imports: ["css", "cva", "sva", "cx"],
     }),
-    // TODO: styled doesn't work with auto imports
     defineUnimportPreset({
       from: `${outdir}/jsx`,
-      imports: ["styled"],
+      imports: [
+        "styled", // TODO: styled doesn't work with auto imports
+        "AspectRatio",
+        "Bleed",
+        "Box",
+        "Center",
+        "Circle",
+        "Container",
+        "Divider",
+        "Flex",
+        "Float",
+        "GridItem",
+        "Grid",
+        "HStack",
+        "LinkBox",
+        "LinkOverlay",
+        "Spacer",
+        "Square",
+        "Stack",
+        "VisuallyHidden",
+        "VStack",
+        "Wrap",
+      ],
     }),
   ];
 };
