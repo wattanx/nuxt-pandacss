@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import { styled } from "pandacss/jsx";
-</script>
-
 <template>
   <div :class="center({ h: 'full' })">
     <div
