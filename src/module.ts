@@ -29,6 +29,7 @@ export default defineNuxtModule<ModuleOptions>({
     outdir: "styled-system",
     cwd: nuxt.options.buildDir,
     cssPath: `${nuxt.options.buildDir}/panda.css`,
+    autoImports: true,
   }),
   async setup(options, nuxt) {
     const { resolve } = createResolver(import.meta.url);
@@ -43,7 +44,9 @@ export default defineNuxtModule<ModuleOptions>({
       "./*"
     );
 
-    addImportsSources(createPresets({ outdir: options.outdir }));
+    if (options.autoImports) {
+      addImportsSources(createPresets({ outdir: options.outdir }));
+    }
 
     if (existsSync(resolve(nuxt.options.buildDir, "panda.config.mjs"))) {
       await fsp.rm(resolve(nuxt.options.buildDir, "panda.config.mjs"));
