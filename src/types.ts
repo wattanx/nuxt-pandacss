@@ -15,4 +15,9 @@ export interface ModuleOptions extends Config {
    * @example '@/assets/css/global.css'
    */
   cssPath?: string;
+  /**
+   * Automatically add to the auto imports.
+   * @default true
+   */
+  autoImports?: boolean;
 }

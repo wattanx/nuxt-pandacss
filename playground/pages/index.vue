@@ -1,11 +1,23 @@
 <script setup lang="ts">
-import { css } from "pandacss/css";
-import { styled } from "pandacss/jsx";
+import { center } from "pandacss/patterns";
 </script>
 
 <template>
-  <styled.h1 fontSize="5xl" fontWeight="bold">Panda CSS x Nuxt</styled.h1>
-  <div :class="css({ fontSize: '5xl', fontWeight: 'bold', color: 'primary' })">
-    Hello 🐼!
+  <div :class="center({ h: 'full' })">
+    <div
+      :class="
+        css({
+          display: 'flex',
+          flexDirection: 'column',
+          fontWeight: 'semibold',
+          color: 'yellow.300',
+          textAlign: 'center',
+          textStyle: '4xl',
+        })
+      "
+    >
+      <span>🐼</span>
+      <span>Hello from Panda</span>
+    </div>
   </div>
 </template>
