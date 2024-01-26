@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import { center } from "pandacss/patterns";
+</script>
+
 <template>
   <div :class="center({ h: 'full' })">
     <div

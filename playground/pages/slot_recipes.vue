@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { center } from "pandacss/patterns";
+
 const card = sva({
   slots: ["root", "title", "content"],
   base: {

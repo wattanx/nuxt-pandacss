@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { center } from "pandacss/patterns";
+
 const button = cva({
   base: {
     borderRadius: "md",

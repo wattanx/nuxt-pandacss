@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import { square, flex, circle, center } from "pandacss/patterns";
+import { Circle } from "pandacss/jsx";
+</script>
+
 <template>
   <div
     :class="
@@ -27,7 +32,7 @@
     >
       <div :class="circle({ size: '12', bg: 'blue.300' })">1</div>
       <div :class="circle({ size: '12', bg: 'orange.300' })">2</div>
-      <div :class="circle({ size: '12', bg: 'violet.300' })">3</div>
+      <Circle size="12" bg="violet.300">3</Circle>
     </div>
   </div>
 </template>
