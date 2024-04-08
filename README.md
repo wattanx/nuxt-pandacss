@@ -17,25 +17,12 @@ Panda CSS module for Nuxt.
 
 ## Quick Setup
 
+You can install `@wattanx/nuxt-pandacss` using `nuxi`:
+
 1. Add `@wattanx/nuxt-pandacss` dependency to your project
 
 ```bash
-# Using pnpm
-pnpm add -D @wattanx/nuxt-pandacss
-
-# Using yarn
-yarn add --dev @wattanx/nuxt-pandacss
-
-# Using npm
-npm install --save-dev @wattanx/nuxt-pandacss
-```
-
-2. Add `@wattanx/nuxt-pandacss` to the `modules` section of `nuxt.config.ts`
-
-```js
-export default defineNuxtConfig({
-  modules: ["@wattanx/nuxt-pandacss"],
-});
+npx nuxi@latest module add @wattanx/nuxt-pandacss
 ```
 
 That's it! You can now use `@wattanx/nuxt-pandacss` in your Nuxt app ✨
