@@ -48,7 +48,7 @@
     "changelogen": "^0.5.5",
     "eslint": "^8.56.0",
     "nuxt": "3.9.3",
-    "vitest": "^1.2.2"
+    "vitest": "^2.0.5"
   },
   "publishConfig": {
     "access": "public"
