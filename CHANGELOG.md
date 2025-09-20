@@ -1,6 +1,18 @@
 # Changelog
 
 
+## [0.7.1](https://github.com/wattanx/nuxt-pandacss/compare/nuxt-pandacss-v0.7.0...nuxt-pandacss-v0.7.1) (2025-09-20)
+
+
+### Features
+
+* support auto imports ([#50](https://github.com/wattanx/nuxt-pandacss/issues/50)) ([7db0fe0](https://github.com/wattanx/nuxt-pandacss/commit/7db0fe09e3b49b6d13209c28a6958c04fbd64f12))
+
+
+### Bug Fixes
+
+* fix type ([#46](https://github.com/wattanx/nuxt-pandacss/issues/46)) ([92f63fa](https://github.com/wattanx/nuxt-pandacss/commit/92f63faa83100231a7228f2aa0278a5efa20e5e0))
+
 ## v0.7.0
 
 [compare changes](https://github.com/wattanx/nuxt-pandacss/compare/v0.4.1...v0.7.0)
@@ -185,4 +197,3 @@
 ### ❤️  Contributors
 
 - Wattanx <@wattanx>
-
