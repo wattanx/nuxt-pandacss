@@ -20,7 +20,7 @@
     "nuxt-og-image": "^2.2.4"
   },
   "devDependencies": {
-    "@nuxthq/studio": "^1.0.10",
+    "@nuxthq/studio": "^2.2.1",
     "studio": "link:@@nuxthq/studio"
   }
 }
